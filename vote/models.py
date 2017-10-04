@@ -18,8 +18,7 @@ class Candidate(models.Model):
     votes = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        '''String representation of Candidate.'''
-        return '{} - {}'.format(self.last_name, self.party)
+        return '{} ({})'.format(self.full_name(), self.get_party())
 
     def full_name(self):
         '''Return the candidate's full name.'''
